@@ -1,0 +1,14 @@
+.claude
+
+.idea
+*.iws
+*.iml
+*.ipr
+!.idea/runConfigurations
+
+certs/*.pem
+certs/*.p12
+certs/*.key
+certs/*.crt
+
+.DS_Store

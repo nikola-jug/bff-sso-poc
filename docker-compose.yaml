@@ -1,0 +1,6 @@
+include:
+  - path: keycloak-idp/docker-compose.yaml
+  - path: spring-boot-auth-server/docker-compose.yaml
+  - path: spring-boot-bff/docker-compose.yaml
+  - path: spring-boot-resource-server/docker-compose.yaml
+  - path: angular-ui/docker-compose.yaml
