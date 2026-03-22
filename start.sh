@@ -49,7 +49,7 @@ wait_for_healthy
 cat <<EOF
 ==> Done. All services are healthy.
 
-    Angular UI:          https://localhost
+    Angular UI:          https://angular-ui-web
     Auth Server:         https://spring-boot-auth-server:9000
     Keycloak:            https://oidc-identity-provider:8443
     Web BFF:             https://spring-boot-web-bff:8080
