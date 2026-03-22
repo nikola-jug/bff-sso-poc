@@ -1,18 +1,18 @@
 [submodule "angular-ui"]
 	path = angular-ui
-	url = git@github-personal:nikola-jug/angular-ui.git
+	url = git@github.com:nikola-jug/angular-ui.git
 [submodule "ionic-mobile"]
 	path = ionic-mobile
-	url = git@github-personal:nikola-jug/ionic-mobile.git
+	url = git@github.com:nikola-jug/ionic-mobile.git
 [submodule "keycloak-idp"]
 	path = keycloak-idp
-	url = git@github-personal:nikola-jug/keycloak-idp.git
+	url = git@github.com:nikola-jug/keycloak-idp.git
 [submodule "spring-boot-auth-server"]
 	path = spring-boot-auth-server
-	url = git@github-personal:nikola-jug/spring-boot-auth-server.git
+	url = git@github.com:nikola-jug/spring-boot-auth-server.git
 [submodule "spring-boot-bff"]
 	path = spring-boot-bff
-	url = git@github-personal:nikola-jug/spring-boot-bff.git
+	url = git@github.com:nikola-jug/spring-boot-bff.git
 [submodule "spring-boot-resource-server"]
 	path = spring-boot-resource-server
-	url = git@github-personal:nikola-jug/spring-boot-resource-server.git
+	url = git@github.com:nikola-jug/spring-boot-resource-server.git
