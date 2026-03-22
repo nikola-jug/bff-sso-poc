@@ -6,6 +6,19 @@ This document captures known issues, shortcuts, and improvements identified duri
 
 ## Bugs
 
+### Android status bar covers ion-header content on edge-to-edge layouts
+**Files:**
+- `ionic-mobile/android/app/src/main/java/io/tacta/ionicbff/MainActivity.java`
+- `ionic-mobile/src/app/app.ts`
+
+On Android 15+ (API 35), edge-to-edge mode is enforced and the WebView renders behind the status bar. Unlike iOS, Android's `env(safe-area-inset-top)` only reports display cutout height — not the status bar height — so Ionic's `--ion-safe-area-top` resolves to `0px` and `ion-header` renders under the status bar.
+
+`@capacitor/status-bar` does not solve this either — it controls appearance (icon color, visibility) but does not forward inset values to CSS variables.
+
+The fix requires native Android code in `MainActivity.java` to read the actual system bar insets via `ViewCompat.setOnApplyWindowInsetsListener` and inject them into the WebView as `--ion-safe-area-top` / `--ion-safe-area-bottom` CSS variables. A `JavascriptInterface` (`AndroidInsets`) is needed so Angular can read the values synchronously in `ngOnInit` (before the first render), since `evaluateJavascript` is unreliable on cold start. `setAppearanceLightStatusBars(true)` is also needed to make the status bar icons dark (visible on the light toolbar background).
+
+---
+
 ### `OAuth2AuthorizationCleanup` — incorrect SQL and missing error handling
 **File:** `spring-boot-auth-server/src/main/java/io/tacta/springbootauthserver/config/OAuth2AuthorizationCleanup.java`
 
